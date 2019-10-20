@@ -9,12 +9,14 @@ public class UnsortedPair {
     static int findPairs(int arr[], int x, int n){
         int pairs = 0;
         int low = 0;
-        int high = n -1;
+        int high = n - 1;
 
         while(low < high){
-            //
+            if(arr[low] + arr[high] < x){
+                pairs += 1;
+            }
 
-            return pairs;
+            low ++;
         }
 
         return pairs;
@@ -27,7 +29,7 @@ public class UnsortedPair {
         System.out.println("Enter number");
         int numberX = Integer.parseInt(input.nextLine());
 
-        findPairs(arr, numberX, arrayLength);
-
+        int result = findPairs(arr, numberX, arrayLength);
+        System.out.println(result);
     }
 }
